@@ -39,3 +39,16 @@ Builds/
 
 # Keep template files
 !**/*.glb.keep
+
+# Extraction pipeline — private config
+tools/extraction/configs/config.yaml
+
+# Extracted assets (large binaries)
+assets/maps/*.dds
+assets/maps/*.png
+assets/maps/hemorrhage_textures/*.webp
+
+# Python
+__pycache__/
+*.pyc
+.venv/

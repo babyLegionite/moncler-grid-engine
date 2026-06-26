@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>architecture</key>
+	<string>aarch64</string>
+	<key>backend</key>
+	<string>apple</string>
+	<key>bootDevice</key>
+	<string>hd0</string>
+	<key>cpuCount</key>
+	<integer>4</integer>
+	<key>displayScale</key>
+	<integer>2</integer>
+	<key>driveInterface</key>
+	<string>nvme</string>
+	<key>firmware</key>
+	<string>uefi</string>
+	<key>machineIdentifier</key>
+	<string>moncler-grid-windows-vm</string>
+	<key>memoryInMB</key>
+	<integer>16384</integer>
+	<key>name</key>
+	<string>moncler-grid-extraction</string>
+	<key>networkMode</key>
+	<string>shared</string>
+	<key>notes</key>
+	<string>Windows VM for Halo Reach asset extraction. 
+Part of moncler-grid-engine: github.com/babyLegionite/moncler-grid-engine
+
+Setup:
+  1. Download Windows 11 ARM64 ISO from Microsoft
+  2. Create VM in UTM with this config
+  3. Install Windows, then run windows_setup.ps1
+  4. Install Steam + MCC + HREK + Assembly
+
+Resources: 4 cores, 16 GB RAM, 80 GB disk (NVMe)
+GPU: Para-virtualized (Metal backend) via Apple Virtualization.framework</string>
+	<key>pointer</key>
+	<true/>
+	<key>serial</key>
+	<true/>
+	<key>sound</key>
+	<true/>
+	<key>usb</key>
+	<true/>
+	<key>drives</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>hd0</string>
+			<key>size</key>
+			<integer>85899345920</integer>
+			<key>removable</key>
+			<false/>
+		</dict>
+	</array>
+	<key>display</key>
+	<dict>
+		<key>hardwareCursor</key>
+		<true/>
+		<key>retina</key>
+		<true/>
+		<key>upscaling</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

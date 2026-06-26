@@ -1,0 +1,51 @@
+# config.yaml — VM connection and tool path configuration
+# Copy to config.yaml and fill in your VM details
+
+vm:
+  # Windows VM SSH connection
+  host: "192.168.64.2"           # UTM shared network default
+  port: 22
+  username: "dane"
+  # Use key-based auth (preferred). Put your public key on the VM.
+  key_file: "~/.ssh/id_ed25519"
+  # Or use password (less secure, not recommended)
+  password: ""
+
+paths:
+  # Windows paths (inside VM)
+  steam_dir: "C:\\Program Files (x86)\\Steam"
+  mcc_dir: "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Halo The Master Chief Collection"
+  hrek_dir: "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Halo The Master Chief Collection\\HREK"
+  assembly_dir: "C:\\Tools\\Assembly"
+  assembly_exe: "C:\\Tools\\Assembly\\Assembly.exe"
+  
+  # Reach map file location
+  forge_halo_map: "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Halo The Master Chief Collection\\haloreach\\maps\\forge_halo.map"
+  
+  # .mvar file location (download from File Share Archive first)
+  infection_mvar: "C:\\Extraction\\hemorrhage_infection.mvar"
+  
+  # Windows scratch space for extraction
+  extraction_scratch: "C:\\Extraction"
+
+  # macOS paths
+  blender_exe: "/Applications/Blender.app/Contents/MacOS/Blender"
+  project_root: "~/.hermes-odysseus/workspace/halo-reach-engine"
+
+extraction:
+  # What to extract
+  extract_bsp: true
+  extract_collision: true
+  extract_textures: true
+  extract_spawns: true
+  extract_forge_objects: true
+  extract_physics: true
+  
+  # Blender processing
+  blender_process: true
+  texture_convert_to_webp: true
+  
+  # Validation
+  validate_meshes: true
+  validate_textures: true
+  validate_json: true

@@ -59,6 +59,29 @@ Press **F5** in Godot editor, or:
 godot --path . --editor
 ```
 
+## Extraction Pipeline (Windows VM)
+
+The engine is ready to render — but first we need the actual Halo Reach assets. This is a one-time extraction process controlled from macOS:
+
+```bash
+# 1. Install dependencies
+pip3 install -r tools/extraction/requirements.txt
+
+# 2. Set up Windows VM (see tools/extraction/README.md)
+#    - Install UTM on macOS
+#    - Create Windows 11 ARM VM with configs/utm_vm.plist
+#    - Run vm/windows_setup.ps1 on the VM
+
+# 3. Configure connection
+cp tools/extraction/configs/config.example.yaml tools/extraction/configs/config.yaml
+# Edit config.yaml with your VM's IP
+
+# 4. Extract everything
+python3 tools/extraction/orchestrate.py --all
+```
+
+This SSHs into the Windows VM, runs HREK + Assembly, pulls .glb + JSON back to macOS, and processes everything through Blender. One command.
+
 ## Controls (DualShock 4)
 
 | Input | Button |
