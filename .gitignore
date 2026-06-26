@@ -1,0 +1,41 @@
+# Godot project
+.godot/
+*.import
+*.translation
+export/
+export_presets.cfg
+
+# Assets (replace with real ones after extraction)
+assets/maps/*.glb
+assets/forge_pieces/*.glb
+assets/characters/*.glb
+assets/weapons/*.glb
+
+# macOS
+.DS_Store
+__MACOSX
+*.app
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary
+/tmp/
+*.tmp
+*.log
+
+# Builds
+build/
+Builds/
+
+# Godot-specific
+.mono/
+*.uid
+*.tscn.uid
+
+# Keep template files
+!**/*.glb.keep

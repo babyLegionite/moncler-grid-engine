@@ -1,0 +1,60 @@
+{
+  "_comment": "Weapon data for Halo Reach arsenal",
+  "_source": "Tag data from forge_halo.map + c20.reclaimers.net/hr/tags/weapon",
+
+  "weapons": {
+    "assault_rifle": {
+      "display_name": "MA37 Assault Rifle",
+      "type": "hitscan",
+      "damage_per_shot": 5.0,
+      "rounds_per_second": 10.0,
+      "magazine_size": 32,
+      "max_ammo": 288,
+      "reload_time": 1.8,
+      "reload_time_empty": 2.3,
+      "range": 50.0,
+      "spread": 1.5,
+      "zoom_levels": 0,
+      "can_headshot": false
+    },
+    "magnum": {
+      "display_name": "M6G Magnum",
+      "type": "hitscan",
+      "damage_per_shot": 12.0,
+      "rounds_per_second": 3.5,
+      "magazine_size": 8,
+      "max_ammo": 48,
+      "reload_time": 1.4,
+      "reload_time_empty": 1.8,
+      "range": 80.0,
+      "spread": 0.5,
+      "zoom_levels": 2,
+      "can_headshot": true,
+      "headshot_multiplier": 3.0
+    },
+    "shotgun": {
+      "display_name": "M45 Shotgun",
+      "type": "hitscan",
+      "damage_per_pellet": 8.0,
+      "pellets_per_shot": 12,
+      "rounds_per_second": 1.0,
+      "magazine_size": 6,
+      "max_ammo": 24,
+      "reload_time": 0.5,
+      "reload_time_per_shell": 0.7,
+      "range": 10.0,
+      "spread": 5.0,
+      "zoom_levels": 0,
+      "can_headshot": false
+    },
+    "zombie_claw": {
+      "display_name": "Infection Claw",
+      "type": "melee",
+      "damage_per_swing": 50.0,
+      "swings_per_second": 1.5,
+      "lunge_range": 1.5,
+      "lunge_speed": 8.0,
+      "weapon_swap_speed": 0.2
+    }
+  }
+}

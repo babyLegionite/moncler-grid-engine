@@ -1,0 +1,71 @@
+{
+  "_comment": "Hemorrhage Infection variant spawn points",
+  "_source": "Will be populated from forge_halo.map scenario tag via Assembly",
+  "_game_mode": "Infection",
+  "_map": "Hemorrhage (Forge World variant)",
+
+  "spawns": [
+    {
+      "id": 0,
+      "pos": [0.0, 0.0, 0.0],
+      "rot": 0.0,
+      "team": "human",
+      "label": "Human spawn placeholder — replace with extracted coordinates"
+    },
+    {
+      "id": 1,
+      "pos": [5.0, 0.0, 5.0],
+      "rot": 90.0,
+      "team": "human",
+      "label": "Human spawn placeholder"
+    },
+    {
+      "id": 2,
+      "pos": [-5.0, 0.0, -5.0],
+      "rot": 180.0,
+      "team": "human",
+      "label": "Human spawn placeholder"
+    },
+    {
+      "id": 3,
+      "pos": [5.0, 0.0, -5.0],
+      "rot": 270.0,
+      "team": "human",
+      "label": "Human spawn placeholder"
+    },
+    {
+      "id": 10,
+      "pos": [-10.0, 0.0, 10.0],
+      "rot": 0.0,
+      "team": "infected",
+      "label": "Infected spawn placeholder"
+    },
+    {
+      "id": 11,
+      "pos": [10.0, 0.0, -10.0],
+      "rot": 180.0,
+      "team": "infected",
+      "label": "Infected spawn placeholder"
+    }
+  ],
+
+  "item_spawns": [
+    {
+      "id": 100,
+      "type": "assault_rifle",
+      "pos": [0.0, 0.0, 0.0],
+      "respawn_time": 30.0,
+      "label": "Weapon spawn placeholder"
+    }
+  ],
+
+  "trigger_volumes": [
+    {
+      "id": 200,
+      "type": "safe_zone",
+      "pos": [0.0, 0.0, 0.0],
+      "size": [5.0, 3.0, 5.0],
+      "label": "Safe zone placeholder"
+    }
+  ]
+}

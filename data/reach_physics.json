@@ -1,0 +1,60 @@
+{
+  "_comment": "Halo: Reach physics constants — verify against HREK Standalone + Assembly biped tag",
+  "_source": "ChimpsAtSea/Reach decompilation + community knowledge (c20.reclaimers.net)",
+  "_units": "All values in Blam engine world units (approx 1 world unit = 3.048 meters = 10 feet)",
+  "_verified": "Placeholders until HREK extraction — tune side-by-side with Standalone",
+
+  "gravity": -4.0,
+  "gravity_scale": 1.0,
+
+  "player_walk_speed": 1.5,
+  "player_run_speed": 2.7,
+  "player_crouch_speed": 0.8,
+  "player_sprint_speed": 3.0,
+
+  "jump_height": 0.75,
+  "jump_initial_velocity": 3.5,
+  "jump_gravity_scale": 0.5,
+
+  "ground_acceleration": 10.0,
+  "ground_deceleration": 12.0,
+  "air_acceleration": 2.0,
+  "air_deceleration": 1.0,
+  "max_air_control": 0.25,
+
+  "terminal_velocity": -15.0,
+  "step_height": 0.25,
+  "slope_angle_limit": 60.0,
+
+  "crouch_transition_speed": 5.0,
+  "stand_transition_speed": 3.0,
+
+  "look_sensitivity_horizontal": 2.0,
+  "look_sensitivity_vertical": 1.5,
+  "look_acceleration_time": 0.08,
+  "look_pegged_speed": 6.0,
+
+  "physics_tick_rate": 60,
+  "target_fps": 60,
+
+  "player_height_standing": 1.2,
+  "player_height_crouching": 0.7,
+  "player_radius": 0.3,
+  "player_mass": 80.0,
+
+  "zombie_lunge_distance": 1.2,
+  "zombie_lunge_speed": 8.0,
+  "zombie_lunge_cooldown": 2.0,
+  "zombie_melee_damage": 50.0,
+  "zombie_speed_multiplier": 1.1,
+
+  "last_man_speed_bonus": 1.5,
+  "last_man_damage_bonus": 2.0,
+  "last_man_shield_bonus": 2.0,
+
+  "weapon_swap_speed": 0.4,
+  "reload_speed_multiplier": 1.0,
+  "grenade_throw_velocity": 12.0,
+  "melee_lunge_range": 1.0,
+  "melee_damage": 20.0
+}

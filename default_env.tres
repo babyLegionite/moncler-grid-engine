@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=4 format=3]
+
+[sub_resource type="Sky" id="Sky"]
+[sub_resource type="FogMaterial" id="FogMaterial"]
+density = 0.0008
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_color = Color(0.3, 0.35, 0.4, 1)
+fog_enabled = true
+fog_mode = 1
+fog_depth_end = 200.0
+fog_material = SubResource("FogMaterial")

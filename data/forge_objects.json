@@ -1,0 +1,18 @@
+{
+  "_comment": "Forge object placements for Hemorrhage Infection variant",
+  "_source": "Will be populated from .mvar file via Assembly or community parser",
+  "_map": "Hemorrhage",
+  "_variant": "Infection",
+
+  "forge_objects": [
+    {
+      "id": 1,
+      "type": "wall_straight",
+      "tag_path": "forge_wall_straight",
+      "pos": [0.0, 0.0, 0.0],
+      "rot": [0.0, 0.0, 0.0],
+      "scale": 1.0,
+      "label": "Placeholder — replace with .mvar coordinates"
+    }
+  ]
+}
