@@ -1,0 +1,52 @@
+# AI Pipeline Configuration
+# Copy to pipeline.yaml and customize
+
+gpu:
+  # Dual RTX 4090 strategy
+  primary: 0        # GPU 0: 3DGS training, SUPIR, diffusion
+  secondary: 1      # GPU 1: rendering, batch upscale, material gen
+  strategy: "parallel"  # parallel | sequential
+
+models:
+  # Paths to cloned model repositories
+  model_root: "~/ai-models"
+  
+  # Which model to use for each task
+  geometry:
+    scene: "3dgs"          # 3dgs | colmap
+    objects: "instantmesh"  # instantmesh | triposr | wonder3d
+    multi_view: "zero123"  # zero123 | mvdream
+  
+  texture:
+    upscale: "supir"       # supir | esrgan
+    batch_upscale: "esrgan"
+    material_gen: "deepbump"  # deepbump | stablematerial
+  
+  cleanup:
+    retopology: "quadremesher"  # quadremesher | instant-meshes
+    lod: "simplygon"            # simplygon | blender_decimate
+
+capture:
+  resolution: "3840x2160"  # 4K
+  fps: 120
+  codec: "h264_nvenc"      # NVENC on RTX 4090
+  preset: "p4"             # Fast preset for high quality
+  bitrate: "80M"
+  keyframe_interval: 2     # Every 2 seconds for photogrammetry
+  
+reconstruction:
+  training_iterations: 7000
+  keyframe_fps: 2          # Frames per second to extract from video
+  
+enhancement:
+  upscale_factor: 4
+  target_resolution: "2048x2048"
+  output_format: "webp"    # Godot-optimized
+  quality: 90
+  generate_pbr: true
+  
+cleanup:
+  target_poly_count: 50000
+  lod_levels: 3
+  uv_padding: 2            # pixels
+  collision_decimation: 0.05  # 5% of original faces

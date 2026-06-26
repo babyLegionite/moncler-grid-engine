@@ -15,7 +15,7 @@ headless: ## Verify project loads (CI check)
 test: headless ## Run all validation checks
 	python3 tools/extraction/scripts/validate_assets.py
 
-extract: ## Run full extraction pipeline
+extract: ## Run full extraction pipeline (Windows VM)
 	python3 tools/extraction/orchestrate.py --all
 
 extract-test: ## Test SSH connection to Windows VM
@@ -24,8 +24,28 @@ extract-test: ## Test SSH connection to Windows VM
 validate: ## Validate extracted assets
 	python3 tools/extraction/orchestrate.py --step validate
 
-setup: ## Install Python deps for extraction
+# ── AI Pipeline ──────────────────────────────────────────────────────
+
+ai-setup: ## Install AI pipeline deps
+	pip3 install -r tools/ai_pipeline/requirements.txt
+
+ai-reconstruct: ## Run AI 3D reconstruction
+	python3 tools/ai_pipeline/ai_orchestrate.py --all --skip-capture
+
+ai-enhance: ## Run AI texture enhancement
+	python3 tools/ai_pipeline/ai_orchestrate.py --stage enhance
+
+ai-full: ## Full AI pipeline (capture + reconstruct + enhance)
+	python3 tools/ai_pipeline/ai_orchestrate.py --all
+
+ai-capture: ## Record reference gameplay
+	python3 tools/ai_pipeline/scripts/capture_gameplay.py --mode manual
+
+# ── Setup ────────────────────────────────────────────────────────────
+
+setup: ## Install all Python deps
 	pip3 install -r tools/extraction/requirements.txt
+	pip3 install -r tools/ai_pipeline/requirements.txt
 
 utool: ## Install UTM (macOS only)
 	brew install --cask utm
