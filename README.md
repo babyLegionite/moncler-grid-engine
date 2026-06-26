@@ -133,6 +133,20 @@ This SSHs into the Windows VM, runs HREK + Assembly, pulls .glb + JSON back to m
 └── SPEC.md                # Full technical specification
 ```
 
+## Open-Source Integrations
+
+We leverage existing open-source projects to accelerate toward exact recreation.
+See [docs/INTEGRATION.md](docs/INTEGRATION.md) for the full catalogue.
+
+| Project | What It Does | Priority |
+|---------|-------------|----------|
+| [Foundry](https://github.com/ILoveAGoodCrisp/Foundry) ★58 | Blender addon — import Halo Reach tags → .glb | 🔴 Install now |
+| [CR4B Tool](https://github.com/PlasteredCrab/Halo-CR4B-Tool) ★30 | Game-accurate shader/material setup in Blender | 🔴 Install now |
+| [ReachVariantEditor](https://github.com/DavidJCobb/ReachVariantEditor) ★33 | .mvar parser — Forge coordinate extraction | 🔴 Study format |
+| [HaloGD](https://github.com/BiggieCheese600/HaloGD) | Halo CE multiplayer in Godot (prior art) | 🟡 Reference |
+| [ChimpsAtSea/Reach](https://github.com/ChimpsAtSea/Reach) ★24 | Engine decompilation — physics ground truth | 🟡 Reference |
+| [GodotSteam](https://github.com/GodotSteam/GodotSteam) | Steamworks SDK for Godot | 🟢 Future |
+
 ## Physics — Exact Reach Replication
 
 Physics constants are loaded from `data/reach_physics.json` at runtime. The constants will be verified against:
