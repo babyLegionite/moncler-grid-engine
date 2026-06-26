@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Hemorrhage Infection"
+config/name="moncler-grid-engine"
 config/version="0.1.0"
 config/description="Halo Reach Hemorrhage Infection — 4-player split-screen in Godot 4. Exact Reach physics, DualShock 4 support, macOS-native."
 run/main_scene="res://scenes/HemorrhageInfection.tscn"

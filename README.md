@@ -1,16 +1,11 @@
-# 🔫 Hemorrhage Infection Engine
+# 🔫 moncler-grid-engine
 
 **Exact-replication game engine for classic multiplayer experiences. Godot 4 + macOS + DualShock 4.**
 
-> "Not 'feels like Halo.' IS Halo." — See [Appendix B: Physics Verification Protocol](SPEC.md#appendix-b-physics-constant-verification-protocol)
-
-## What This Is
-
-A **game recreation engine** that rebuilds classic multiplayer games in Godot 4 with pixel-perfect physics, 4-player split-screen, and native DualShock 4 support on macOS.
+> "Not 'feels like Halo.' IS Halo."
 
 **Flagship Project:** Halo Reach — Hemorrhage Infection
-
-This repo is designed to be the foundation for multiple game recreations. Each game is a self-contained set of scenes, scripts, and data files within the same engine framework.
+**Engine:** moncler-grid-engine (general-purpose game recreation platform)
 
 ## Project Status — Phase 2: Engine Build
 
@@ -53,8 +48,8 @@ This repo is designed to be the foundation for multiple game recreations. Each g
 
 ### Open the project
 ```bash
-git clone https://github.com/babyLegionite/Hemorrhage-Infection-Engine.git
-cd Hemorrhage-Infection-Engine
+git clone https://github.com/babyLegionite/moncler-grid-engine.git
+cd moncler-grid-engine
 godot project.godot
 ```
 
