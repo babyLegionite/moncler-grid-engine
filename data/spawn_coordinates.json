@@ -1,71 +1,137 @@
 {
-  "_comment": "Hemorrhage Infection variant spawn points",
-  "_source": "Will be populated from forge_halo.map scenario tag via Assembly",
-  "_game_mode": "Infection",
-  "_map": "Hemorrhage (Forge World variant)",
-
+  "_comment": "Hemorrhage Infection spawn points",
   "spawns": [
     {
       "id": 0,
-      "pos": [0.0, 0.0, 0.0],
-      "rot": 0.0,
+      "pos": [
+        -28.0,
+        1.5,
+        0.0
+      ],
       "team": "human",
-      "label": "Human spawn placeholder — replace with extracted coordinates"
+      "rot": 0.0,
+      "label": "human_spawn_0"
     },
     {
       "id": 1,
-      "pos": [5.0, 0.0, 5.0],
-      "rot": 90.0,
+      "pos": [
+        -26.0,
+        1.5,
+        -4.0
+      ],
       "team": "human",
-      "label": "Human spawn placeholder"
+      "rot": 0.0,
+      "label": "human_spawn_1"
     },
     {
       "id": 2,
-      "pos": [-5.0, 0.0, -5.0],
-      "rot": 180.0,
+      "pos": [
+        -26.0,
+        1.5,
+        4.0
+      ],
       "team": "human",
-      "label": "Human spawn placeholder"
+      "rot": 0.0,
+      "label": "human_spawn_2"
     },
     {
       "id": 3,
-      "pos": [5.0, 0.0, -5.0],
-      "rot": 270.0,
+      "pos": [
+        28.0,
+        1.5,
+        0.0
+      ],
       "team": "human",
-      "label": "Human spawn placeholder"
+      "rot": 0.0,
+      "label": "human_spawn_3"
+    },
+    {
+      "id": 4,
+      "pos": [
+        26.0,
+        1.5,
+        -4.0
+      ],
+      "team": "human",
+      "rot": 0.0,
+      "label": "human_spawn_4"
+    },
+    {
+      "id": 5,
+      "pos": [
+        26.0,
+        1.5,
+        4.0
+      ],
+      "team": "human",
+      "rot": 0.0,
+      "label": "human_spawn_5"
+    },
+    {
+      "id": 6,
+      "pos": [
+        0.0,
+        1.5,
+        8.0
+      ],
+      "team": "human",
+      "rot": 0.0,
+      "label": "human_spawn_6"
+    },
+    {
+      "id": 7,
+      "pos": [
+        0.0,
+        1.5,
+        -8.0
+      ],
+      "team": "human",
+      "rot": 0.0,
+      "label": "human_spawn_7"
+    },
+    {
+      "id": 8,
+      "pos": [
+        0.0,
+        1.5,
+        25.0
+      ],
+      "team": "infected",
+      "rot": 0.0,
+      "label": "infected_spawn_8"
+    },
+    {
+      "id": 9,
+      "pos": [
+        0.0,
+        1.5,
+        -25.0
+      ],
+      "team": "infected",
+      "rot": 0.0,
+      "label": "infected_spawn_9"
     },
     {
       "id": 10,
-      "pos": [-10.0, 0.0, 10.0],
-      "rot": 0.0,
+      "pos": [
+        12.0,
+        1.5,
+        0.0
+      ],
       "team": "infected",
-      "label": "Infected spawn placeholder"
+      "rot": 0.0,
+      "label": "infected_spawn_10"
     },
     {
       "id": 11,
-      "pos": [10.0, 0.0, -10.0],
-      "rot": 180.0,
+      "pos": [
+        -12.0,
+        1.5,
+        0.0
+      ],
       "team": "infected",
-      "label": "Infected spawn placeholder"
-    }
-  ],
-
-  "item_spawns": [
-    {
-      "id": 100,
-      "type": "assault_rifle",
-      "pos": [0.0, 0.0, 0.0],
-      "respawn_time": 30.0,
-      "label": "Weapon spawn placeholder"
-    }
-  ],
-
-  "trigger_volumes": [
-    {
-      "id": 200,
-      "type": "safe_zone",
-      "pos": [0.0, 0.0, 0.0],
-      "size": [5.0, 3.0, 5.0],
-      "label": "Safe zone placeholder"
+      "rot": 0.0,
+      "label": "infected_spawn_11"
     }
   ]
 }

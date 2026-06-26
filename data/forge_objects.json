@@ -1,18 +1,276 @@
 {
-  "_comment": "Forge object placements for Hemorrhage Infection variant",
-  "_source": "Will be populated from .mvar file via Assembly or community parser",
-  "_map": "Hemorrhage",
-  "_variant": "Infection",
-
+  "_comment": "Procedurally generated Hemorrhage Infection Forge layout \u2014 approximate from known variant layouts",
+  "_source": "Community Forge maps + Infection variant reference",
   "forge_objects": [
+    {
+      "id": 0,
+      "type": "wall_straight",
+      "pos": [
+        -28.0,
+        1.0,
+        -5.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
     {
       "id": 1,
       "type": "wall_straight",
-      "tag_path": "forge_wall_straight",
-      "pos": [0.0, 0.0, 0.0],
-      "rot": [0.0, 0.0, 0.0],
-      "scale": 1.0,
-      "label": "Placeholder — replace with .mvar coordinates"
+      "pos": [
+        -28.0,
+        1.0,
+        -3.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 2,
+      "type": "wall_straight",
+      "pos": [
+        -28.0,
+        1.0,
+        -1.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 3,
+      "type": "wall_straight",
+      "pos": [
+        -28.0,
+        1.0,
+        1.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 4,
+      "type": "wall_straight",
+      "pos": [
+        -28.0,
+        1.0,
+        3.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 5,
+      "type": "wall_straight",
+      "pos": [
+        28.0,
+        1.0,
+        -5.0
+      ],
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 6,
+      "type": "wall_straight",
+      "pos": [
+        28.0,
+        1.0,
+        -3.0
+      ],
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 7,
+      "type": "wall_straight",
+      "pos": [
+        28.0,
+        1.0,
+        -1.0
+      ],
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 8,
+      "type": "wall_straight",
+      "pos": [
+        28.0,
+        1.0,
+        1.0
+      ],
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 9,
+      "type": "wall_straight",
+      "pos": [
+        28.0,
+        1.0,
+        3.0
+      ],
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 10,
+      "type": "wall_straight",
+      "pos": [
+        0.0,
+        1.0,
+        10.0
+      ],
+      "rot": [
+        0,
+        90,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 11,
+      "type": "wall_straight",
+      "pos": [
+        0.0,
+        1.0,
+        -10.0
+      ],
+      "rot": [
+        0,
+        90,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 12,
+      "type": "block_2x2",
+      "pos": [
+        5.0,
+        0.5,
+        0.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 13,
+      "type": "block_2x2",
+      "pos": [
+        -5.0,
+        0.5,
+        0.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 14,
+      "type": "ramp",
+      "pos": [
+        -20.0,
+        0.5,
+        15.0
+      ],
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 15,
+      "type": "ramp",
+      "pos": [
+        20.0,
+        0.5,
+        -15.0
+      ],
+      "rot": [
+        0,
+        225,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 16,
+      "type": "block_2x4",
+      "pos": [
+        0.0,
+        0.5,
+        15.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
+    },
+    {
+      "id": 17,
+      "type": "block_2x4",
+      "pos": [
+        0.0,
+        0.5,
+        -15.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1.0
     }
   ]
 }

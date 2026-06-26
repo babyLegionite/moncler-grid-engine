@@ -12,13 +12,17 @@ macOS (moncler-grid-engine)
 │   ├── config.yaml             ← VM connection + tool paths
 │   ├── scripts/
 │   │   ├── extract_assets.py   ← SSH into VM, run HREK/Assembly
-│   │   ├── process_assets.py   ← Blender post-processing
-│   │   └── validate_assets.py  ← Verify .glb + JSON correctness
+│   │   ├── process_assets.py   ← Foundry/CR4B Blender processing
+│   │   ├── validate_assets.py  ← Verify .glb + JSON correctness
+│   │   └── mvar_parser.py      ← Parse .mvar files for Forge coordinates
 │   ├── configs/
 │   │   └── utm.plist           ← UTM VM configuration template
 │   ├── vm/
 │   │   └── windows_setup.ps1   ← Auto-configure Windows VM
 │   └── requirements.txt
+│
+├── tools/dev/
+│   └── generate_hemorrhage_terrain.py  ← Procedural terrain for testing
 │
 ├── assets/                     ← Output: .glb + textures land here
 ├── data/                       ← Output: JSON data lands here

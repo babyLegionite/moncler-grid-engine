@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 InputManager="*res://scripts/gd/InputManager.gd"
+DevTools="*res://scripts/gd/DevTools.gd"
 
 [display]
 
