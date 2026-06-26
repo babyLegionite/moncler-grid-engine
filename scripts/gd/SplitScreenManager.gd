@@ -74,14 +74,14 @@ func assign_player_camera(player_index: int, player_node: Node3D) -> void:
 		player_cam.add_child(remote)
 	else:
 		# Fallback: add follow script
-		var follow = CameraFollow.new()
+		var follow = load("res://scripts/cs/CameraFollow.cs").new()
 		follow.Target = player_node
 		cam.add_child(follow)
 
 	# Set viewport world to match game world
 	vp.world_3d = player_node.get_world_3d()
 
-func get_viewport(player_index: int) -> SubViewport:
+func fetch_viewport(player_index: int) -> SubViewport:
 	if player_index < viewports.size():
 		return viewports[player_index]
 	return null

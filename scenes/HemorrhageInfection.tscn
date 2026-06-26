@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hemorrhage_infection_root"]
+[gd_scene load_steps=7 format=3 uid="uid://hemorrhage_infection_root"]
 
 [ext_resource type="Script" path="res://scripts/gd/InfectionFSM.gd" id="1_fsm"]
 [ext_resource type="Script" path="res://scripts/gd/SplitScreenManager.gd" id="2_split"]
@@ -7,13 +7,6 @@
 [ext_resource type="Script" path="res://scripts/gd/TeamManager.gd" id="5_teams"]
 [ext_resource type="Script" path="res://scripts/gd/ScoreManager.gd" id="6_score"]
 [ext_resource type="Environment" path="res://default_env.tres" id="7_env"]
-
-[sub_resource type="DirectionalLight3D" id="dir_light"]
-light_energy = 0.8
-shadow_enabled = true
-
-[sub_resource type="WorldEnvironment" id="world_env"]
-environment = ExtResource("7_env")
 
 [node name="HemorrhageInfection" type="Node3D"]
 
@@ -28,14 +21,11 @@ shadow_enabled = true
 [node name="MapRoot" type="Node3D" parent="."]
 
 [node name="TerrainMesh" type="MeshInstance3D" parent="MapRoot"]
-# Placeholder box until BSP extraction
-mesh = SubResource("BoxMesh")
 visible = false
 
 [node name="CollisionBody" type="StaticBody3D" parent="MapRoot"]
-# Ground plane for testing
+
 [node name="GroundPlane" type="CollisionShape3D" parent="MapRoot/CollisionBody"]
-shape = SubResource("WorldBoundaryShape3D")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="MapRoot"]
 
@@ -46,7 +36,6 @@ script = ExtResource("4_forge")
 script = ExtResource("3_spawn")
 
 [node name="Players" type="Node3D" parent="."]
-# Player instances spawned dynamically or added via editor
 
 [node name="GameModeManager" type="Node" parent="."]
 

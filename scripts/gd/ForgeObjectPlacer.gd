@@ -5,7 +5,7 @@ extends Node3D
 class_name ForgeObjectPlacer
 
 var forge_data: Dictionary = {}
-var piece_types: Dictionary = {}  # type_name → MultiMeshInstance3D
+var piece_types: Dictionary = {}  # type_name -> MultiMeshInstance3D
 
 func _ready() -> void:
 	load_forge_data()
@@ -37,70 +37,70 @@ func place_objects() -> void:
 	# Create MultiMeshInstance3D for each type
 	for type_name in objects_by_type:
 		var instances = objects_by_type[type_name]
+		_create_forge_group(type_name, instances)
 
-		# Try to load mesh from assets
-		var mesh_path = "res://assets/forge_pieces/%s.glb" % type_name
-		var mesh: Mesh = null
+func _create_forge_group(type_name: String, instances: Array) -> void:
+	# Try to load mesh from assets
+	var mesh_path = "res://assets/forge_pieces/%s.glb" % type_name
+	var mesh: Mesh = null
 
-		if ResourceLoader.exists(mesh_path):
-			var packed = ResourceLoader.load(mesh_path) as PackedScene
-			if packed:
-				var instance = packed.instantiate()
-				if instance is MeshInstance3D:
-					mesh = instance.mesh
-		else:
-			# Fallback: create a box mesh for placeholders
-			var box = BoxMesh.new()
-			box.size = Vector3(1.0, 2.0, 0.2)  # Default wall size
-			mesh = box
+	if ResourceLoader.exists(mesh_path):
+		var packed = ResourceLoader.load(mesh_path) as PackedScene
+		if packed:
+			var inst = packed.instantiate()
+			if inst is MeshInstance3D:
+				mesh = inst.mesh
+	else:
+		# Fallback: create a box mesh for placeholders
+		var box = BoxMesh.new()
+		box.size = Vector3(1.0, 2.0, 0.2)
+		mesh = box
 
-		if mesh == null:
-			continue
+	if mesh == null:
+		return
 
-		var multi = MultiMeshInstance3D.new()
-		var multimesh = MultiMesh.new()
-		multimesh.mesh = mesh
-		multimesh.transform_format = MultiMesh.TRANSFORM_3D
-		multimesh.instance_count = instances.size()
+	var multi = MultiMeshInstance3D.new()
+	var multimesh = MultiMesh.new()
+	multimesh.mesh = mesh
+	multimesh.transform_format = MultiMesh.TRANSFORM_3D
+	multimesh.instance_count = instances.size()
 
-		for i in range(instances.size()):
-			var obj = instances[i]
-			var t = Transform3D()
+	for i in range(instances.size()):
+		var obj = instances[i]
+		var t = Transform3D()
 
-			# Position
-			if "pos" in obj:
-				t.origin = Vector3(obj["pos"][0], obj["pos"][1], obj["pos"][2])
+		# Position
+		if "pos" in obj:
+			var pos = obj["pos"]
+			t.origin = Vector3(pos[0], pos[1], pos[2])
 
-			# Rotation (Euler: pitch, yaw, roll)
-			if "rot" in obj:
-				t = t.rotated(Vector3(model: string, rotation: float, scale: float = 1.0):, obj["rot"][0] * deg_to_rad)
-Right, obj["rot"][1] * deg_to_rad)
-Right, obj["rot"][2] * deg_to_rad)
+		# Rotation (Euler: pitch, yaw, roll)
+		if "rot" in obj:
+			var r = obj["rot"]
+			t = t.rotated(Vector3.RIGHT, deg_to_rad(r[0]))
+			t = t.rotated(Vector3.UP, deg_to_rad(r[1]))
+			t = t.rotated(Vector3.BACK, deg_to_rad(r[2]))
 
-			# Scale
-			if "scale" in obj:
-				t = t.scaled(Vector3.ONE * obj["scale"])
+		# Scale
+		if "scale" in obj:
+			var s = obj["scale"]
+			t = t.scaled(Vector3(s, s, s))
 
-			multimesh.set_instance_transform(i, t)
+		multimesh.set_instance_transform(i, t)
 
-		multi.multimesh = multimesh
-		multi.name = "Forge_%s" % type_name
+	multi.multimesh = multimesh
+	multi.name = "Forge_%s" % type_name
 
-		# Add collision bodies
-		var static_body = StaticBody3D.new()
-		var collision_shape = CollisionShape3D.new()
-		var col = ConvexPolygonShape3D.new()
-		# Use mesh convex hull for collision
-		if mesh is BoxMesh:
-			var box = BoxShape3D.new()
-			box.size = mesh.size
-			collision_shape.shape = box
-		else:
-			col.points = mesh.get_faces()  # Approximate
-			collision_shape.shape = col
+	# Add collision bodies
+	var static_body = StaticBody3D.new()
+	var collision_shape = CollisionShape3D.new()
 
+	if mesh is BoxMesh:
+		var box_shape = BoxShape3D.new()
+		box_shape.size = mesh.size
+		collision_shape.shape = box_shape
 		static_body.add_child(collision_shape)
 		multi.add_child(static_body)
-		add_child(multi)
 
-		print("[ForgePlacer] Placed %d '%s' pieces" % [instances.size(), type_name])
+	add_child(multi)
+	print("[ForgePlacer] Placed %d '%s' pieces" % [instances.size(), type_name])
