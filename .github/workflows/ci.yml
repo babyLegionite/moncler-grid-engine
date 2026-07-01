@@ -1,0 +1,25 @@
+name: Godot CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Godot
+        run: brew install --cask godot
+
+      - name: Install Blender
+        run: brew install --cask blender
+
+      - name: Generate procedural terrain
+        run: blender --background --python tools/dev/generate_hemorrhage_terrain.py
+
+      - name: Run headless + asset validation
+        run: make test
