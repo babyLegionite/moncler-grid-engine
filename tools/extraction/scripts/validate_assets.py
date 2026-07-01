@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 ASSETS_DIR = PROJECT_ROOT / "assets"
 DATA_DIR = PROJECT_ROOT / "data"
 
@@ -132,21 +132,33 @@ def main():
 
     # ── Validate .glb files ──
     print("\n📦 glTF 2.0 Files:")
-    expected_glbs = [
-        ASSETS_DIR / "maps" / "hemorrhage_terrain.glb",
-        ASSETS_DIR / "maps" / "hemorrhage_collision.glb",
-    ]
 
-    for glb_path in expected_glbs:
-        result = check_glb(glb_path)
-        if result["valid"]:
-            print(f"  ✅ {glb_path.name} — {result['size_mb']} MB, glTF {result['gltf_version']}")
-        elif result["error"] == "File not found":
-            print(f"  🔶 {glb_path.name} — not yet extracted")
-            warnings += 1
+    def find_glb(base_name: str) -> Optional[Path]:
+        """Find a .glb file — try extracted name first, then procedural, then any variant."""
+        glbs = list((ASSETS_DIR / "maps").glob("*.glb"))
+        # Exact match
+        exact = ASSETS_DIR / "maps" / f"{base_name}.glb"
+        if exact.exists():
+            return exact
+        # Procedural variant: base_name_procedural.glb
+        proc = ASSETS_DIR / "maps" / f"{base_name}_procedural.glb"
+        if proc.exists():
+            return proc
+        return None
+
+    for base_name in ["hemorrhage_terrain", "hemorrhage_collision"]:
+        found = find_glb(base_name)
+        if found:
+            label = "procedural" if "_procedural" in found.name else "extracted"
+            result = check_glb(found)
+            if result["valid"]:
+                print(f"  ✅ {found.name} — {result['size_mb']} MB, glTF {result['gltf_version']} ({label})")
+            else:
+                print(f"  ❌ {found.name} — {result['error']}")
+                issues += 1
         else:
-            print(f"  ❌ {glb_path.name} — {result['error']}")
-            issues += 1
+            print(f"  🔶 {base_name}.glb — not yet generated or extracted")
+            warnings += 1
 
     # ── Validate textures ──
     print("\n🖼  Textures:")

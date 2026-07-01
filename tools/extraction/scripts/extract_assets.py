@@ -42,7 +42,7 @@ except ImportError:
 
 # ── Config ──────────────────────────────────────────────────────────────────
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 CONFIG_PATH = PROJECT_ROOT / "tools" / "extraction" / "configs" / "config.yaml"
 
 if not CONFIG_PATH.exists():
